@@ -1,6 +1,6 @@
 ﻿using GPUHunt.Domain.Entities;
 
-namespace GPUHunt.Domain.Models
+namespace GPUHunt.Application.Models
 {
     public class ValidationGraphicCardsModel
     {

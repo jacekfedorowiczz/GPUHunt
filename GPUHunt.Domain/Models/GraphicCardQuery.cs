@@ -1,6 +1,6 @@
 ﻿namespace GPUHunt.Domain.Models
 {
-    public class GraphicCardQueryModel
+    public class GraphicCardQuery
     {
         public int PageSize { get; set; }
         public int PageNumber { get; set; }

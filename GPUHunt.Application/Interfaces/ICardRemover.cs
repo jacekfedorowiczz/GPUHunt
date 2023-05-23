@@ -1,6 +1,6 @@
 ﻿using GPUHunt.Domain.Entities;
 
-namespace GPUHunt.Domain.Interfaces
+namespace GPUHunt.Application.Interfaces
 {
     public interface ICardRemover
     {

@@ -1,6 +1,6 @@
-﻿using GPUHunt.Domain.Models;
+﻿using GPUHunt.Application.Models;
 
-namespace GPUHunt.Domain.Interfaces
+namespace GPUHunt.Application.Interfaces
 {
     public interface IShopCrawler
     {

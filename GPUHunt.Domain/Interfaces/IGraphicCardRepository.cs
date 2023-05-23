@@ -1,10 +1,5 @@
 ﻿using GPUHunt.Domain.Entities;
 using GPUHunt.Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GPUHunt.Domain.Interfaces
 {

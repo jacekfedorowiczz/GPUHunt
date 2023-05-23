@@ -1,4 +1,4 @@
-﻿namespace GPUHunt.Domain.Models
+﻿namespace GPUHunt.Domain.Entities
 {
     public class Shop
     {

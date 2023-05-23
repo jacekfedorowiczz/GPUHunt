@@ -1,4 +1,4 @@
-﻿namespace GPUHunt.Domain.Models
+﻿namespace GPUHunt.Application.Models
 {
     public class GPU
     {

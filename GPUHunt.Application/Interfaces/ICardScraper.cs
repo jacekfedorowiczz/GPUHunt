@@ -1,4 +1,6 @@
-﻿namespace GPUHunt.Domain.Interfaces
+﻿using System.Threading.Tasks;
+
+namespace GPUHunt.Application.Interfaces
 {
     public interface ICardScraper
     {

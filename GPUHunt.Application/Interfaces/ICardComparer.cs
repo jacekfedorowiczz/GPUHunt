@@ -1,7 +1,7 @@
-﻿using GPUHunt.Domain.Entities;
-using GPUHunt.Domain.Models;
+﻿using GPUHunt.Application.Models;
+using GPUHunt.Domain.Entities;
 
-namespace GPUHunt.Domain.Interfaces
+namespace GPUHunt.Application.Interfaces
 {
     public interface ICardComparer
     {
