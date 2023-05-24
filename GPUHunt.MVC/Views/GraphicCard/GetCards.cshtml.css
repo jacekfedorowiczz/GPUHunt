@@ -8,6 +8,8 @@
 
 h2 {
     text-align: center;
+    font-size: 1.7rem;
+    font-weight: bold;
 }
 
 .info-box {
@@ -19,7 +21,8 @@ h2 {
 }
 
 .btn-danger {
-    border-radius: 2px;
+    display: inline-block;
+    width: 50px;
     transition: background-color 0.3s;
 }
 
