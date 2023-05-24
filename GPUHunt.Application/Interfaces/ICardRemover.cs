@@ -4,6 +4,6 @@ namespace GPUHunt.Application.Interfaces
 {
     public interface ICardRemover
     {
-        Task Remove(IEnumerable<GraphicCard> comparedCards, IEnumerable<GraphicCard> cardsFromDatabase);
+        Task Remove(IEnumerable<Domain.Entities.GraphicCard> comparedCards, IEnumerable<Domain.Entities.GraphicCard> cardsFromDatabase);
     }
 }

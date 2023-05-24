@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "GPU Hunt | Dokumentacja - Architektura projektu";
+}
+@Html.ActionLink("Powrót do spisu treści", "Index", "Documentation")
+<h3>Usługi</h3>
+<div class="services-about">
+    <p>W ramach warstwy aplikacji możemy wyróżnić następujące usługi:</p>
+    <h4>Crawlery sklepów</h4>
+    <p>
+        W oparciu o selektory CSS odpowiedzialne są za pobranie stron z kartami graficznymi, a następnie przeiterowaniu przez te strony w celu pobrania informacji,
+        które są niezbędne dla utworzenia modelu reprezentującego kartę graficzną. Zawiera on takie informacje jak nazwa, producent układu, cena oraz nazwę sklepu,
+        z którego pobrano informacje.
+    </p>
+    <h4>CardCrawler</h4>
+    <p>
+        Odpowiedzialny jest za pobranie utworzonych przez crawlery sklepów internetowych modele reprezentujące karty graficzne i przekazanie ich Comparerowi, aby je porównać.
+        Następnie karty są sprawdzane przez Validator pod kątem unikalności oraz tego, czy dana karta graficzna powinna zostać usunięta z bazy danych w związku z wycofaniem ze sprzedaży.
+        Wszystkie nowe karty zostają z kolei przekazane do repozytorium w celu ich dodania do bazy danych.
+    </p>
+    <h4>CardComparer</h4>
+    <p>
+        Odpowiada za porównanie dwóch identycznych modeli kart graficznych, pochodzących z różnych sklepów internetowych. W ramach tej usługi następuje porównanie, który sklep oferuje lepszą cenę albo czy cena oferowana przez sklepy internetowe jest identyczna.
+    </p>
+    <h4>CardValidator</h4>
+    <p>
+        Jego zadaniem jest zweryfikowanie stanu, czy dana karta jest nową kartą, wymaga aktualizacji swoich właściwości bądź też powinna zostać usunięta. Usługa zwraca model, które przechowuje wspomniane wcześniej informacje.
+    </p>
+    <h4>CardRemover</h4>
+    <p>
+        Usługa ta odpowiedzialna jest za usunięcie starych kart graficznych, które nie są już dostępne w ofercie żadnego z sklepów internetowych. W efekcie tego następuje usunięcie kart graficznych z bazy danych.
+    </p>
+    <h4>CardUpdater</h4>
+    <p>
+        W ramach tej usługi następuje porównanie właściwości karty graficznej pochodzącej z bazy danych oraz karty graficznej, która została pobrana ze sklepów internetowych i poddana porównaniu. Przedmiotem aktualizacji są takie właściwości jak poszczególne ceny
+        kart graficznych oraz który sklep oferuje najniższą cenę za kartę. Informacje zostają następnie zaktulizowane w bazie danych.
+    </p>
+    <h4>CardScraper</h4>
+    <p>
+        Pobiera wszystkie modele kart graficznych z bazy danych, a następnie serializuje je do formatu JSON, który następnie jest zwrócony klientowi.
+    </p>
+</div>

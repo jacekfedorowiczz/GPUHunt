@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "GPU Hunt | Dokumentacja - Endpointy";
+}
+@Html.ActionLink("Powrót do spisu treści", "Index", "Documentation")
+<h3>Endpointy</h3>
+<div class="endpoints-about">
+    <p>W ramach projektu możemy wyróżnić jeden kontroler o nazwie GraphicCard. Zawarte w nim zostały endpointy odpowiadające za:</p>
+    <ul class="endpoint-list list-unstyled list-inline">
+        <li><a class="fw-bold" asp-action="Crawl" asp-controller="GraphicCard">Crawl</a> - pobiera karty graficzne ze stron internetowych i zapisuje je do bazy danych;</li>
+        <li><a class="fw-bold" asp-action="GetCards" asp-controller="GraphicCard">GetCards</a> - zwraca karty graficzne z bazy danych do widoku w formie tabeli;</li>
+        <li><a class="fw-bold" asp-action="Update" asp-controller="GraphicCard">Update</a> - aktualizuje karty graficzne zapisane w bazie danych;</li>
+        <li><a class="fw-bold" asp-action="Scrap" asp-controller="GraphicCard">Scrap</a> - zwraca klientowi JSON-a z zserializowanymi kartami graficznymi z bazy danych;</li>
+    </ul>
+    <br />
+    <p>Endpoint zwracający do klienta zserializowane karty graficzne w formacie JSON dostępny jest wyłącznie dla zalogowanych użytkowników.</p>
+</div>

@@ -4,8 +4,8 @@ namespace GPUHunt.Application.Models
 {
     public class ValidationGraphicCardsModel
     {
-        public IEnumerable<GraphicCard> CardsFromDatabase { get; set; } = default!;
-        public IEnumerable<GraphicCard> NewCards { get; set; } = default!;
-        public IEnumerable<GraphicCard>? CardsToUpdate { get; set; }
+        public IEnumerable<Domain.Entities.GraphicCard> CardsFromDatabase { get; set; } = default!;
+        public IEnumerable<Domain.Entities.GraphicCard> NewCards { get; set; } = default!;
+        public IEnumerable<Domain.Entities.GraphicCard>? CardsToUpdate { get; set; }
     }
 }

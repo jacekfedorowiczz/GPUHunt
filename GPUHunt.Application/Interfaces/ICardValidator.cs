@@ -5,6 +5,6 @@ namespace GPUHunt.Application.Interfaces
 {
     public interface ICardValidator
     {
-        Task<ValidationGraphicCardsModel> ValidateGPUs(IEnumerable<GraphicCard> comparedCards);
+        Task<ValidationGraphicCardsModel> ValidateGPUs(IEnumerable<Domain.Entities.GraphicCard> comparedCards);
     }
 }

@@ -1,0 +1,25 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.nav-item {
+    transition: border-bottom 0.1s;
+}
+
+    .nav-item:hover {
+        border-bottom: 1px solid black;
+    }
+
+@media(max-width: 576px) {
+    html {
+        font-size: 16px;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

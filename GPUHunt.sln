@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GPUHunt.Tests", "GPUHunt.Te
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GPUHunt.IntegrationTests", "GPUHunt.IntegrationTests\GPUHunt.IntegrationTests.csproj", "{765A6D9C-8357-4F19-939C-A89E1CDEFB38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GPUHunt.Domain", "GPUHunt.Domain\GPUHunt.Domain.csproj", "{F3ED5E38-31E2-4A2E-80DD-2A6FEEBC65D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GPUHunt.Domain", "GPUHunt.Domain\GPUHunt.Domain.csproj", "{F3ED5E38-31E2-4A2E-80DD-2A6FEEBC65D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

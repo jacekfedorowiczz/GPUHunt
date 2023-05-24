@@ -1,8 +1,28 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "GPU Hunt | Strona główna";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="text-center container about">
+    <h1 class="display-4">GPU Hunt</h1>
+    <div class="about">
+        <p>
+            <span class="application-title">GPU Hunt</span> to prosta aplikacja ASP.NET MVC, której zadaniem jest crawling oraz scraping kart graficznych w dwóch popularnych w Polsce sklepach internetowych: <a href="https://www.x-kom.pl" title="x-kom.pl Strona główna" target="_blank">x-kom.pl</a> oraz <a href="https://www.morele.net" title="morele.net Strona główna" target="_blank">morele.net</a>.
+            Pomysł na projekt powstał w związku z problemem dostępności kart graficznych na polskim rynku komputerowym w latach 2020-2022.
+        </p>
+        <p>
+            Zastosowane algorytmy umożliwiają odczyt najważniejszych informacji dot. danej karty graficznej a następnie - w przypadku wystąpienia identycznego modelu karty u konkurencji - dokonanie stosownego porównania.
+            Umożliwia to określenie, który sklep internetowy oferują lepszą cenę za daną kartę graficzną. Po porównaniu kart graficzny lub w przypadku nieznalezienia identycznego modelu w ofercie konkurencji, następuje utworzenie encji, która zostaje zapisana w bazie danych aplikacji.
+        </p>
+        <p>
+            Użytkownik może wyświetlić zapisane w bazie danych karty wywołując odpowiedni endpoint, który zwróca widok z tabelą zawierającą rekordy z bazy danych. Wyniki te są odpowiednio paginowane w celu uniknięcia każdorazowego pobrania wszystkich
+            rekordów z bazy danych bezpośrednio do pamięci programu. Tabela pozwala sortować karty graficzne po modelu, producencie układu oraz cenach kart. Użytkownik może też wyszukać karty graficzne, podając w searchboxie odpowiednie wyrażenie.
+        </p>
+        <p>
+            Aplikacja pozwala także aktualizację cen kart graficzny poprzez wywołanie odpowiedniego endpointa. W niedalekiej przyszłości dodany zostanie również odpowiedni Background Service, który odpowiadać będzie za automatyczną
+            aktualizację cen w określonym odstępie czasu.
+        </p>
+        <p>
+            Dodatkowo dla zarejestrowanych użytkowników przewidziana została dodatkowa akcja, która zwraca zserializowane karty graficzne z bazy danych w formie JSON.
+        </p>
+    </div>
 </div>

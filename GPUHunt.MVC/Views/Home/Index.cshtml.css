@@ -1,0 +1,41 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    gap: 20px;
+    text-align: justify;
+    font-size: 10px;
+}
+
+.about2 {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-size: 10px;
+}
+
+p {
+    font-size: 1.4em;
+}
+
+i {
+    display: block;
+    margin: 20px 40px;
+    color: black;
+    transition: color 0.2s;
+}
+
+    i:hover {
+        color: tomato;
+    }
+
+.application-title {
+    font-weight: bold;
+}

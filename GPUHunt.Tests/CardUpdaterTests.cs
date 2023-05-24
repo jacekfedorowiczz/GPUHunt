@@ -123,78 +123,78 @@ namespace GPUHunt.Tests
         }
 
 
-        private Domain.Entities.GraphicCard GetExampleCardFromDatabase1()
+        private static Domain.Entities.GraphicCard GetExampleCardFromDatabase1()
         {
             return new Domain.Entities.GraphicCard
             {
                 Model = "Gigabyte GeForce RTX 3060 Eagle OC 12GB GDDR6",
                 LowestPrice = 1699.00M,
-                LowestPriceShop = new Domain.Models.Shop() { Name = "Morele " },
+                LowestPriceShop = new Domain.Entities.Shop() { Name = "Morele " },
                 HighestPrice = null,
                 HighestPriceShop = null,
                 IsPriceEqual = false
             };
         }
 
-        private Domain.Entities.GraphicCard GetExampleCardFromDatabase2()
+        private static Domain.Entities.GraphicCard GetExampleCardFromDatabase2()
         {
             return new Domain.Entities.GraphicCard
             {
                 Model = "Gigabyte GeForce RTX 3060 Eagle OC 12GB GDDR6",
                 LowestPrice = 1699.00M,
-                LowestPriceShop = new Domain.Models.Shop() { Name = "X-Kom " },
+                LowestPriceShop = new Domain.Entities.Shop() { Name = "X-Kom " },
                 HighestPrice = 1799.00M,
-                HighestPriceShop = new Domain.Models.Shop() { Name = "Morele" },
+                HighestPriceShop = new Domain.Entities.Shop() { Name = "Morele" },
                 IsPriceEqual = false
             };
         }
 
-        private Domain.Entities.GraphicCard GetExampleCrawledCardWithHighestPrice()
+        private static Domain.Entities.GraphicCard GetExampleCrawledCardWithHighestPrice()
         {
             return new Domain.Entities.GraphicCard
             {
                 Model = "Gigabyte GeForce RTX 3060 Eagle OC 12GB GDDR6",
                 LowestPrice = 1599.00M,
-                LowestPriceShop = new Domain.Models.Shop() { Name = "Morele " },
+                LowestPriceShop = new Domain.Entities.Shop() { Name = "Morele " },
                 HighestPrice = 1799.00M,
-                HighestPriceShop = new Domain.Models.Shop() { Name = "X-Kom " },
+                HighestPriceShop = new Domain.Entities.Shop() { Name = "X-Kom " },
                 IsPriceEqual = false
             };
         }
 
-        private Domain.Entities.GraphicCard GetExampleCrawledCardWithHighestPrice2()
+        private static Domain.Entities.GraphicCard GetExampleCrawledCardWithHighestPrice2()
         {
             return new Domain.Entities.GraphicCard
             {
                 Model = "Gigabyte GeForce RTX 3060 Eagle OC 12GB GDDR6",
                 LowestPrice = 1499.00M,
-                LowestPriceShop = new Domain.Models.Shop() { Name = "Morele " },
+                LowestPriceShop = new Domain.Entities.Shop() { Name = "Morele " },
                 HighestPrice = 1899.00M,
-                HighestPriceShop = new Domain.Models.Shop() { Name = "X-Kom " },
+                HighestPriceShop = new Domain.Entities.Shop() { Name = "X-Kom " },
                 IsPriceEqual = false
             };
         }
 
-        private Domain.Entities.GraphicCard GetExampleCrawledCardWithoutHighestPrice()
+        private static Domain.Entities.GraphicCard GetExampleCrawledCardWithoutHighestPrice()
         {
             return new Domain.Entities.GraphicCard
             {
                 Model = "Gigabyte GeForce RTX 3060 Eagle OC 12GB GDDR6",
                 LowestPrice = 1599.00M,
-                LowestPriceShop = new Domain.Models.Shop() { Name = "Morele " },
+                LowestPriceShop = new Domain.Entities.Shop() { Name = "Morele " },
                 HighestPrice = null,
                 HighestPriceShop = null,
                 IsPriceEqual = false
             };
         }
 
-        private Domain.Entities.GraphicCard GetExampleCrawledCardWithEqualPrice()
+        private static Domain.Entities.GraphicCard GetExampleCrawledCardWithEqualPrice()
         {
             return new Domain.Entities.GraphicCard
             {
                 Model = "Gigabyte GeForce RTX 3060 Eagle OC 12GB GDDR6",
                 LowestPrice = 1599.00M,
-                LowestPriceShop = new Domain.Models.Shop() { Name = "Morele, X-Kom " },
+                LowestPriceShop = new Domain.Entities.Shop() { Name = "Morele, X-Kom " },
                 HighestPrice = null,
                 HighestPriceShop = null,
                 IsPriceEqual = true

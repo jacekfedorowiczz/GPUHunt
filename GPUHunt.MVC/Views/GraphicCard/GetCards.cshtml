@@ -1,0 +1,91 @@
+﻿@using System.Text;
+@model PaginationModel<GPUHunt.Application.Models.DTOs.GraphicCardDto>
+@{
+    ViewBag.Title = "Tabela kart graficznych";
+}
+
+<h2>Tabela kart graficznych</h2>
+<div class="container-fluid info-box">
+    @using (Html.BeginForm("GetCards", "GraphicCard", FormMethod.Get))
+    {
+            <p>Wyszukaj model karty graficznej:
+            @Html.TextBox("SearchPhrase", ViewBag.SearchPhrase as string)
+                <input class="btn-danger" type="submit" value="Szukaj"/>
+            </p>
+    }
+</div>
+<div class="container table-container">
+    <table class="table table-hover">
+        <thead>
+            <tr class="table-header-row">
+                <th class="table-header">
+                    @Html.ActionLink("Model", "GetCards", new { sortBy = "Model", searchPhrase = ViewBag.SearchPhrase, sortOrder = ViewBag.CurrentSort == "Model" && ViewBag.SortOrder == "asc" ? "desc" : "asc", selectedPageSize = ViewBag.PageSize })
+                </th>
+                <th class="table-header">
+                    @Html.ActionLink("Producent układu", "GetCards", new { sortBy = "Vendor", searchPhrase = ViewBag.SearchPhrase, sortOrder = ViewBag.CurrentSort == "Vendor" && ViewBag.SortOrder == "asc" ? "desc" : "asc", selectedPageSize = ViewBag.PageSize })
+                </th>
+                <th class="table-header">
+                    @Html.ActionLink("Najniższa cena", "GetCards", new { sortBy = "LowestPrice", searchPhrase = ViewBag.SearchPhrase, sortOrder = ViewBag.CurrentSort == "LowestPrice" && ViewBag.SortOrder == "asc" ? "desc" : "asc", selectedPageSize = ViewBag.PageSize })
+                </th>
+                <th class="table-header">
+                    @Html.ActionLink("Najwyższa cena", "GetCards", new { sortBy = "HighestPrice", searchPhrase = ViewBag.SearchPhrase, sortOrder = ViewBag.CurrentSort == "HighestPrice" && ViewBag.SortOrder == "asc" ? "desc" : "asc", selectedPageSize = ViewBag.PageSize })
+                </th>
+                <th class="table-header">Sklep najniższej ceny</th>
+                <th class="table-header">Sklep najwyższej ceny</th>
+                <th class="table-header">Identyczna cena</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var gpu in Model.Items)
+            {
+                StringBuilder sb = new StringBuilder(gpu.HighestPrice.ToString());
+                    <tr>
+                        <td class="col-3 model-row">@gpu.Model</td>
+                        <td class="col">@gpu.Vendor</td>
+                        <td class="col">@gpu.LowestPrice zł</td>
+                        <td class="col">@(gpu.HighestPrice != null ? sb.Append(" zł") : "-")</td>
+                        <td class="col">@gpu.LowestPriceShop</td>
+                        <td class="col">@(gpu.HighestPriceShop != null ? @gpu.HighestPriceShop : "-")</td>
+                        <td class="col">@(gpu.IsPriceEqual is true ? "TAK" : "NIE")</td>
+                    </tr>
+            }
+        </tbody>
+    </table>
+    <div class="container table-info">
+        <p class="record-label col-md-2 col-sm-3 col-3">@Model.ItemsFrom-@Model.ItemsTo z @Model.TotalItemsCount rekordów</p>
+        <p class="total-pages col-md-2 col-sm-3 col-3">Strona @(Model.PageNumber) z @Model.TotalPages</p>
+    </div>
+    <div class="container pagination">
+        @Html.ActionLink("<<", "GetCards", new { page = 1, sortBy = ViewBag.CurrentSort, sortOrder = ViewBag.SortOrder, searchPhrase = ViewBag.SearchPhrase })  
+        @for (int i = 1; i < Model.TotalPages; i++)
+        {
+            if (i == Model.PageNumber)
+            {
+                @Html.ActionLink(i.ToString(), "GetCards", new { page = i, sortBy = ViewBag.CurrentSort, sortOrder = ViewBag.SortOrder, searchPhrase = ViewBag.SearchPhrase })
+            }
+            else if (i > Model.PageNumber - 2 && i < Model.PageNumber + 2)
+            {
+                @Html.ActionLink(i.ToString(), "GetCards", new { page = i, sortBy = ViewBag.CurrentSort, sortOrder = ViewBag.SortOrder, searchPhrase = ViewBag.SearchPhrase })
+            }
+        }
+        @if (Model.PageNumber == Model.TotalPages - 1)
+        {
+            @Html.ActionLink($"{Model.TotalPages}", "GetCards", new { page = Model.TotalPages, sortBy = ViewBag.CurrentSort, sortOrder = ViewBag.SortOrder, searchPhrase = ViewBag.SearchPhrase })
+        }
+        @if (Model.PageNumber <= Model.TotalPages)
+        {
+            @if (Model.PageNumber == Model.TotalPages)
+            {
+                @Html.ActionLink($"{Model.PageNumber}", "GetCards", new { page = Model.PageNumber, sortBy = ViewBag.CurrentSort, sortOrder = ViewBag.SortOrder, searchPhrase = ViewBag.SearchPhrase })
+            }
+            @Html.ActionLink(">>", "GetCards", new { page = Model.TotalPages, sortBy = ViewBag.CurrentSort, sortOrder = ViewBag.SortOrder, searchPhrase = ViewBag.SearchPhrase })
+        }
+    </div>
+</div>
+<div class="container-fluid other-actions flex-column">
+    <p>Odśwież ceny kart graficznych klikając <a class="update-action"  asp-action="Update">tutaj</a>.</p>
+    @if (User.Identity.IsAuthenticated)
+    {
+            <p>Scrapuj karty graficzne do pliku <a class="scrap-action" asp-action="Scrap">JSON</a>.</p>
+    }
+</div>

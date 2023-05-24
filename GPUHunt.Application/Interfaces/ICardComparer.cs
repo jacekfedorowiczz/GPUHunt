@@ -5,6 +5,6 @@ namespace GPUHunt.Application.Interfaces
 {
     public interface ICardComparer
     {
-        Task<IEnumerable<GraphicCard>> Compare(IEnumerable<GPU> gpus);
+        Task<IEnumerable<Domain.Entities.GraphicCard>> Compare(IEnumerable<GPU> gpus);
     }
 }

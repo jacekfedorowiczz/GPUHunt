@@ -1,0 +1,35 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 10px;
+}
+
+h3 {
+    margin-bottom: 2%;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.contents-page {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    gap: 20px;
+    list-style: none;
+}
+
+li {
+    font-size: 2em;
+}

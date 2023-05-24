@@ -1,0 +1,45 @@
+﻿:root {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 10px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: bold;
+}
+
+.container {
+    margin-top: 5%;
+    text-align: center;
+}
+
+p{
+    font-size: 1.5em;
+}
+
+.btn-div {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2%;
+    justify-content: center;
+    align-items: center;
+}
+
+.crawl-btn {
+    margin-top: 10%;
+    width: 100px;
+    height: 40px;
+    font-size: 1.5rem;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 10px;
+    transition: background-color 0.4s;
+}
+
+.crawl-btn:hover {
+    background-color: tomato;
+}
