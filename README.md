@@ -11,6 +11,8 @@ The application allows, among others:
 - filtering, sorting, and paginating the results
 - exporting results to a JSON file (available only for registered users)
 
+Private use only application.
+
 PL:
 
 GPU Hunt to prosta aplikacja ASP.NET MVC, która za pomocą mechanizmu Web Scrapingu przeszukuje i zbiera informacje o dostępnych kartach graficznych w dwóch największych sklepach internetowych w Polsce: X-Kom oraz Morele.
@@ -21,3 +23,5 @@ Aplikacja umożliwia m.in.:
 - pobieranie wyników zapisanych w bazie danych
 - filtrowanie, sortowanie i paginację wyników
 - wyeksportowanie wyników do pliku JSON (dostępne tylko dla zarejestrowanych użytkowników)
+
+Aplikacja tylko do użytku prywatnego.
