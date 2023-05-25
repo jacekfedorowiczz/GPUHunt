@@ -6,10 +6,12 @@ using GPUHunt.Application.GraphicCard.Queries.IsDatabaseNotEmpty;
 using GPUHunt.Application.GraphicCard.Queries.ScrapGraphicCards;
 using GPUHunt.Application.Models.DTOs;
 using GPUHunt.Domain.Models;
+using GPUHunt.MVC.Extensions;
 using GPUHunt.MVC.Models;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace GPUHunt.MVC.Controllers
 {
@@ -103,6 +105,9 @@ namespace GPUHunt.MVC.Controllers
             try
             {
                 await _mediator.Send(new UpdateGraphicCardsCommand());
+
+                this.SetNotification("success", "Pomyślnie zaktualizowano karty w bazie danych.");
+
                 return RedirectToAction("Index");
             }
             catch (Exception)
