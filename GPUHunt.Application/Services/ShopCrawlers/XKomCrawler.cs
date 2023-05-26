@@ -94,7 +94,7 @@ namespace GPUHunt.Application.Services.ShopCrawlers
 
             var gpuName = sb.Append(gpuModel).Insert(0, "Karta graficzna ").ToString();
 
-            string gpuVendor = await SetVendor(gpuName);
+            string gpuVendor = IShopCrawler.SetVendor(gpuName);
 
             var result = new GPU
             {
@@ -106,30 +106,6 @@ namespace GPUHunt.Application.Services.ShopCrawlers
             };
 
             return result;
-        }
-
-        private static async Task<string> SetVendor(string gpuName)
-        {
-            string vendor;
-
-            if (gpuName.ToLower().Contains("geforce") || gpuName.ToLower().Contains("quadro") || gpuName.ToLower().Contains("gtx"))
-            {
-                vendor = "NVIDIA";
-            }
-            else if (gpuName.ToLower().Contains("radeon") || gpuName.ToLower().Contains("rx"))
-            {
-                vendor = "AMD";
-            }
-            else if (gpuName.ToLower().Contains("intel") || gpuName.ToLower().Contains("arc"))
-            {
-                vendor = "Intel";
-            }
-            else
-            {
-                vendor = "Undefinied";
-            }
-
-            return vendor;
         }
     }
 }

@@ -84,9 +84,11 @@ namespace GPUHunt.Application.Services.ShopCrawlers
         private async Task<GPU> GetGPUDetails(HtmlNode gpu)
         {
             StringBuilder sb = new();
+
             var gpuName = string.Join(' ', gpu.QuerySelector(_gpuNameSelector)
                                     .Attributes["title"]
                                     .Value);
+
             var gpuPrice = decimal.Parse(gpu.QuerySelector(_gpuPriceSelector)
                                     .InnerText
                                     .ToString(Nfi)
@@ -116,30 +118,6 @@ namespace GPUHunt.Application.Services.ShopCrawlers
             };
 
             return result;
-        }
-
-        private static async Task<string> SetVendor(string gpuName)
-        {
-            string vendor;
-
-            if (gpuName.ToLower().Contains("geforce") || gpuName.ToLower().Contains("quadro") || gpuName.ToLower().Contains("gtx"))
-            {
-                vendor = "NVIDIA";
-            }
-            else if (gpuName.ToLower().Contains("radeon") || gpuName.ToLower().Contains("rx"))
-            {
-                vendor = "AMD";
-            }
-            else if (gpuName.ToLower().Contains("intel") || gpuName.ToLower().Contains("arc"))
-            {
-                vendor = "Intel";
-            }
-            else
-            {
-                vendor = "Undefinied";
-            }
-
-            return vendor;
         }
     }
 }
