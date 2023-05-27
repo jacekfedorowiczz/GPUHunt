@@ -104,7 +104,7 @@ namespace GPUHunt.Application.Services.ShopCrawlers
                 gpuName = gpuName.Substring(0, gpuName.IndexOf(_characterToAvoid)).Trim();
             }
 
-            string gpuVendor = await SetVendor(gpuName);
+            string gpuVendor = IShopCrawler.SetVendor(gpuName);
 
             var gpuModel = sb.Append(gpuName).Remove(start, end + 9).ToString().Trim();
 

@@ -84,10 +84,10 @@ namespace GPUHunt.Application.Services.ShopCrawlers
         private async Task<GPU> GetGPUDetails(HtmlNode gpu)
         {
             StringBuilder sb = new();
-            var gpuModel = String.Join(' ', gpu.QuerySelector(_gpuNameSelector).LastChild.InnerText.ToString());
+            var gpuModel = gpu.QuerySelector(_gpuNameSelector).LastChild.InnerText.ToString();
             if (String.IsNullOrEmpty(gpuModel))
             {
-                gpuModel = String.Join(' ', gpu.QuerySelector(_optionalGpuNameSelector).Attributes["alt"].Value.ToString());
+                gpuModel = gpu.QuerySelector(_optionalGpuNameSelector).Attributes["alt"].Value.ToString();
             }
 
             var gpuPrice = decimal.Parse(gpu.QuerySelector(_gpuPriceSelector).InnerText.ToString(nfi).Replace("zł", "").Replace("od", ""));
