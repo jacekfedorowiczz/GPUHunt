@@ -34,6 +34,9 @@ namespace GPUHunt.Infrastructure.Migrations
                         .HasPrecision(7, 2)
                         .HasColumnType("decimal(7,2)");
 
+                    b.Property<string>("HighestPriceStore")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("IsPriceEqual")
                         .HasColumnType("bit");
 
@@ -41,17 +44,47 @@ namespace GPUHunt.Infrastructure.Migrations
                         .HasPrecision(7, 2)
                         .HasColumnType("decimal(7,2)");
 
+                    b.Property<string>("LowestPriceStore")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Model")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Vendor")
+                    b.Property<decimal?>("MorelePrice")
+                        .HasPrecision(7, 2)
+                        .HasColumnType("decimal(7,2)");
+
+                    b.Property<int>("VendorId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal?>("XKomPrice")
+                        .HasPrecision(7, 2)
+                        .HasColumnType("decimal(7,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("VendorId");
+
+                    b.ToTable("GraphicCards");
+                });
+
+            modelBuilder.Entity("GPUHunt.Domain.Entities.Vendor", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("GraphicCards");
+                    b.ToTable("Vendors");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -258,44 +291,13 @@ namespace GPUHunt.Infrastructure.Migrations
 
             modelBuilder.Entity("GPUHunt.Domain.Entities.GraphicCard", b =>
                 {
-                    b.OwnsOne("GPUHunt.Domain.Entities.Shop", "HighestPriceShop", b1 =>
-                        {
-                            b1.Property<int>("GraphicCardId")
-                                .HasColumnType("int");
-
-                            b1.Property<string>("Name")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)");
-
-                            b1.HasKey("GraphicCardId");
-
-                            b1.ToTable("GraphicCards");
-
-                            b1.WithOwner()
-                                .HasForeignKey("GraphicCardId");
-                        });
-
-                    b.OwnsOne("GPUHunt.Domain.Entities.Shop", "LowestPriceShop", b1 =>
-                        {
-                            b1.Property<int>("GraphicCardId")
-                                .HasColumnType("int");
-
-                            b1.Property<string>("Name")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)");
-
-                            b1.HasKey("GraphicCardId");
-
-                            b1.ToTable("GraphicCards");
-
-                            b1.WithOwner()
-                                .HasForeignKey("GraphicCardId");
-                        });
-
-                    b.Navigation("HighestPriceShop");
-
-                    b.Navigation("LowestPriceShop")
+                    b.HasOne("GPUHunt.Domain.Entities.Vendor", "Vendor")
+                        .WithMany("GraphicCards")
+                        .HasForeignKey("VendorId")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Vendor");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -347,6 +349,11 @@ namespace GPUHunt.Infrastructure.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("GPUHunt.Domain.Entities.Vendor", b =>
+                {
+                    b.Navigation("GraphicCards");
                 });
 #pragma warning restore 612, 618
         }

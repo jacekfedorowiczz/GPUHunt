@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GPUHunt.Application\GPUHunt.Application.csproj" />
-    <ProjectReference Include="..\GPUHunt.Domain\GPUHunt.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>

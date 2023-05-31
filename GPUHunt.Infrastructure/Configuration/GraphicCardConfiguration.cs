@@ -13,14 +13,16 @@ namespace GPUHunt.Infrastructure.Configuration
     {
         public void Configure(EntityTypeBuilder<GraphicCard> builder)
         {
-            builder.Property(g => g.Vendor)
-                .IsRequired();
-
             builder.Property(g => g.Model)
                 .IsRequired();
 
+            builder.Property(g => g.XKomPrice)
+                .HasPrecision(7, 2);
+
+            builder.Property(g => g.MorelePrice)
+                .HasPrecision(7, 2);
+
             builder.Property(g => g.LowestPrice)
-                .IsRequired()
                 .HasPrecision(7, 2);
 
             builder.Property(g => g.HighestPrice)

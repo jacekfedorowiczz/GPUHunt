@@ -65,28 +65,37 @@ namespace GPUHunt.Tests
                 new Domain.Entities.GraphicCard
                     {
                         Model = "Gigabyte GeForce RTX 3060 Eagle OC 12GB GDDR6",
+                        VendorId = 1,
+                        MorelePrice = 1499.00M,
+                        XKomPrice = null,
                         LowestPrice = 1499.00M,
-                        LowestPriceShop = new Domain.Entities.Shop() { Name = "Morele " },
+                        LowestPriceStore = "Morele",
                         HighestPrice = null,
-                        HighestPriceShop = null,
+                        HighestPriceStore = null,
                         IsPriceEqual = false
                     },
                     new Domain.Entities.GraphicCard
                     {
                         Model = "Gigabyte GeForce RTX 3070 Eagle OC 8GB GDDR6x",
+                        VendorId = 1,
+                        MorelePrice = 2000.00M,
+                        XKomPrice = 2100.00M,
                         LowestPrice = 2000.00M,
-                        LowestPriceShop = new Domain.Entities.Shop() { Name = "Morele " },
+                        LowestPriceStore = "Morele",
                         HighestPrice = 2100.00M,
-                        HighestPriceShop = new Domain.Entities.Shop() { Name = "X-Kom " },
+                        HighestPriceStore = "X-Kom",
                         IsPriceEqual = false
                     },
                     new Domain.Entities.GraphicCard
                     {
                         Model = "Gigabyte GeForce RTX 3080 Eagle OC 12GB GDDR6X",
+                        VendorId = 1,
+                        MorelePrice = 3600.00M,
+                        XKomPrice = 3600.00M,
                         LowestPrice = 3600.00M,
-                        LowestPriceShop = new Domain.Entities.Shop() { Name = "Morele, X-Kom " },
+                        LowestPriceStore = "Morele, X-Kom",
                         HighestPrice = null,
-                        HighestPriceShop = null,
+                        HighestPriceStore = null,
                         IsPriceEqual = true
                     }
             };
@@ -102,28 +111,37 @@ namespace GPUHunt.Tests
                     new Domain.Entities.GraphicCard
                     {
                         Model = "Gigabyte GeForce RTX 3060 Eagle OC 12GB GDDR6",
+                        VendorId = 1,
+                        MorelePrice = 1499.00M,
+                        XKomPrice = null,
                         LowestPrice = 1499.00M,
-                        LowestPriceShop = new Domain.Entities.Shop() { Name = "Morele " },
+                        LowestPriceStore = "Morele",
                         HighestPrice = null,
-                        HighestPriceShop = null,
+                        HighestPriceStore = null,
                         IsPriceEqual = false
                     },
                     new Domain.Entities.GraphicCard
                     {
                         Model = "Gigabyte GeForce RTX 3070 Eagle OC 8GB GDDR6x",
+                        VendorId = 1,
+                        MorelePrice = 2000.00M,
+                        XKomPrice = 2100.00M,
                         LowestPrice = 2000.00M,
-                        LowestPriceShop = new Domain.Entities.Shop() { Name = "Morele " },
+                        LowestPriceStore = "Morele",
                         HighestPrice = 2100.00M,
-                        HighestPriceShop = new Domain.Entities.Shop() { Name = "X-Kom " },
+                        HighestPriceStore = "X-Kom",
                         IsPriceEqual = false
                     },
                     new Domain.Entities.GraphicCard
                     {
                         Model = "Gigabyte GeForce RTX 3080 Eagle OC 12GB GDDR6X",
+                        VendorId = 1,
+                        MorelePrice = 3600.00M,
+                        XKomPrice = 3600.00M,
                         LowestPrice = 3600.00M,
-                        LowestPriceShop = new Domain.Entities.Shop() { Name = "Morele, X-Kom " },
+                        LowestPriceStore = "Morele, X-Kom",
                         HighestPrice = null,
-                        HighestPriceShop = null,
+                        HighestPriceStore = null,
                         IsPriceEqual = true
                     }
                 },
@@ -132,6 +150,7 @@ namespace GPUHunt.Tests
             };
         }
 
+
         private static IEnumerable<Domain.Entities.GraphicCard> GetExampleCollection2()
         {
             return new List<Domain.Entities.GraphicCard>()
@@ -139,28 +158,37 @@ namespace GPUHunt.Tests
                 new Domain.Entities.GraphicCard
                 {
                     Model = "Gigabyte GeForce RTX 3060 Eagle OC 12GB GDDR6",
+                    VendorId = 1,
+                    MorelePrice = 1499.00M,
+                    XKomPrice = null,
                     LowestPrice = 1499.00M,
-                    LowestPriceShop = new Domain.Entities.Shop() { Name = "Morele " },
+                    LowestPriceStore = "Morele",
                     HighestPrice = null,
-                    HighestPriceShop = null,
+                    HighestPriceStore = null,
                     IsPriceEqual = false
                 },
                 new Domain.Entities.GraphicCard
                 {
                     Model = "Gigabyte GeForce RTX 3070 Eagle OC 8GB GDDR6x",
+                    VendorId = 1,
+                    MorelePrice = 2000.00M,
+                    XKomPrice = 2100.00M,
                     LowestPrice = 2000.00M,
-                    LowestPriceShop = new Domain.Entities.Shop() { Name = "Morele " },
+                    LowestPriceStore = "Morele",
                     HighestPrice = 2100.00M,
-                    HighestPriceShop = new Domain.Entities.Shop() { Name = "X-Kom " },
+                    HighestPriceStore = "X-Kom",
                     IsPriceEqual = false
                 },
                 new Domain.Entities.GraphicCard
                 {
                     Model = "Gigabyte GeForce RTX 3080 Eagle OC 12GB GDDR6X",
+                    VendorId = 1,
+                    MorelePrice = 3600.00M,
+                    XKomPrice = 3600.00M,
                     LowestPrice = 3600.00M,
-                    LowestPriceShop = new Domain.Entities.Shop() { Name = "Morele, X-Kom " },
+                    LowestPriceStore = "Morele, X-Kom",
                     HighestPrice = null,
-                    HighestPriceShop = null,
+                    HighestPriceStore = null,
                     IsPriceEqual = true
                 }
             };
@@ -173,19 +201,25 @@ namespace GPUHunt.Tests
                 new Domain.Entities.GraphicCard
                 {
                     Model = "Gigabyte GeForce RTX 3060 Eagle OC 12GB GDDR6",
+                    VendorId = 1,
+                    MorelePrice = 1599.00M,
+                    XKomPrice = null,
                     LowestPrice = 1599.00M,
-                    LowestPriceShop = new Domain.Entities.Shop() { Name = "Morele " },
+                    LowestPriceStore = "Morele",
                     HighestPrice = null,
-                    HighestPriceShop = null,
+                    HighestPriceStore = null,
                     IsPriceEqual = false
                 },
                 new Domain.Entities.GraphicCard
                 {
                     Model = "Gigabyte GeForce RTX 3070 Eagle OC 8GB GDDR6x",
+                    VendorId = 1,
+                    MorelePrice = 2300.00M,
+                    XKomPrice = 2200.00M,
                     LowestPrice = 2200.00M,
-                    LowestPriceShop = new Domain.Entities.Shop() { Name = "X-Kom " },
+                    LowestPriceStore = "X-Kom",
                     HighestPrice = 2300.00M,
-                    HighestPriceShop = new Domain.Entities.Shop() { Name = "Morele " },
+                    HighestPriceStore = "Morele",
                     IsPriceEqual = false
                 },
             };
@@ -200,19 +234,25 @@ namespace GPUHunt.Tests
                     new Domain.Entities.GraphicCard
                     {
                         Model = "Gigabyte GeForce RTX 3060 Eagle OC 12GB GDDR6",
+                        VendorId = 1,
+                        MorelePrice = 1599.00M,
+                        XKomPrice = null,
                         LowestPrice = 1599.00M,
-                        LowestPriceShop = new Domain.Entities.Shop() { Name = "Morele " },
+                        LowestPriceStore = "Morele",
                         HighestPrice = null,
-                        HighestPriceShop = null,
+                        HighestPriceStore = null,
                         IsPriceEqual = false
                     },
                     new Domain.Entities.GraphicCard
                     {
                         Model = "Gigabyte GeForce RTX 3070 Eagle OC 8GB GDDR6x",
+                        VendorId = 1,
+                        MorelePrice = 2300.00M,
+                        XKomPrice = 2200.00M,
                         LowestPrice = 2200.00M,
-                        LowestPriceShop = new Domain.Entities.Shop() { Name = "X-Kom " },
+                        LowestPriceStore = "X-Kom",
                         HighestPrice = 2300.00M,
-                        HighestPriceShop = new Domain.Entities.Shop() { Name = "Morele " },
+                        HighestPriceStore = "Morele",
                         IsPriceEqual = false
                     },
                 },
@@ -221,10 +261,13 @@ namespace GPUHunt.Tests
                     new Domain.Entities.GraphicCard
                     {
                         Model = "Gigabyte GeForce RTX 3080 Eagle OC 12GB GDDR6X",
+                        VendorId = 1,
+                        MorelePrice = 3600.00M,
+                        XKomPrice = 3600.00M,
                         LowestPrice = 3600.00M,
-                        LowestPriceShop = new Domain.Entities.Shop() { Name = "Morele, X-Kom " },
+                        LowestPriceStore = "Morele, X-Kom",
                         HighestPrice = null,
-                        HighestPriceShop = null,
+                        HighestPriceStore = null,
                         IsPriceEqual = true
                     }
                 },
@@ -233,19 +276,25 @@ namespace GPUHunt.Tests
                     new Domain.Entities.GraphicCard
                     {
                         Model = "Gigabyte GeForce RTX 3060 Eagle OC 12GB GDDR6",
+                        VendorId = 1,
+                        MorelePrice = 1499.00M,
+                        XKomPrice = null,
                         LowestPrice = 1499.00M,
-                        LowestPriceShop = new Domain.Entities.Shop() { Name = "Morele " },
+                        LowestPriceStore = "Morele",
                         HighestPrice = null,
-                        HighestPriceShop = null,
+                        HighestPriceStore = null,
                         IsPriceEqual = false
                     },
                     new Domain.Entities.GraphicCard
                     {
                         Model = "Gigabyte GeForce RTX 3070 Eagle OC 8GB GDDR6x",
+                        VendorId = 1,
+                        MorelePrice = 2000.00M,
+                        XKomPrice = 2100.00M,
                         LowestPrice = 2000.00M,
-                        LowestPriceShop = new Domain.Entities.Shop() { Name = "Morele " },
+                        LowestPriceStore = "Morele",
                         HighestPrice = 2100.00M,
-                        HighestPriceShop = new Domain.Entities.Shop() { Name = "X-Kom " },
+                        HighestPriceStore = "X-Kom",
                         IsPriceEqual = false
                     },
                 }

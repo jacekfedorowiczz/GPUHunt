@@ -3,12 +3,16 @@
     public class GraphicCard
     {
         public int Id { get; set; }
-        public string Vendor { get; set; }
         public string Model { get; set; }
-        public decimal LowestPrice { get; set; }
-        public Shop LowestPriceShop { get; set; }
-        public decimal? HighestPrice { get; set; }
-        public Shop? HighestPriceShop { get; set; }
+        public int VendorId { get; set; }
+        public virtual Vendor Vendor { get; set; }
+        public decimal? MorelePrice { get; set; }
+        public decimal? XKomPrice { get; set; }
         public bool IsPriceEqual { get; set; }
+
+        public decimal LowestPrice { get; set; }
+        public string LowestPriceStore { get; set; }
+        public decimal? HighestPrice { get; set; }
+        public string? HighestPriceStore { get; set; }
     }
 }

@@ -37,7 +37,6 @@ namespace GPUHunt.Application.Extensions
 
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining(typeof(CrawlGraphicCardsCommand)));
 
-
             services.AddAutoMapper(cfg =>
                 cfg.AddProfile(new GraphicCardMappingProfile())
             );

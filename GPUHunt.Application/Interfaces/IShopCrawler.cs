@@ -1,4 +1,5 @@
 ﻿using GPUHunt.Application.Models;
+using GPUHunt.Application.Models.Enums;
 using System.Globalization;
 
 namespace GPUHunt.Application.Interfaces
@@ -7,26 +8,26 @@ namespace GPUHunt.Application.Interfaces
     {
         Task<IEnumerable<GPU>> CrawlShop();
         
-        static string SetVendor(string gpuName)
+        static Vendors SetVendor(string gpuName)
         {
             TextInfo textInfo = new CultureInfo("pl-PL", false).TextInfo;
-            string vendor;
+            Vendors vendor;
 
             if (textInfo.ToLower(gpuName).Contains("geforce") || textInfo.ToLower(gpuName).Contains("quadro") || textInfo.ToLower(gpuName).Contains("gtx"))
             {
-                vendor = "NVIDIA";
+                vendor = Vendors.NVIDIA;
             }
             else if (textInfo.ToLower(gpuName).Contains("radeon") || textInfo.ToLower(gpuName).Contains("rx"))
             {
-                vendor = "AMD";
+                vendor = Vendors.AMD;
             }
             else if (textInfo.ToLower(gpuName).Contains("intel") || textInfo.ToLower(gpuName).Contains("arc"))
             {
-                vendor = "Intel";
+                vendor = Vendors.Intel;
             }
             else
             {
-                vendor = "Undefinied";
+                vendor = Vendors.Undefinied;
             }
 
             return vendor;

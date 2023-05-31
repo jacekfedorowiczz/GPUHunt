@@ -28,6 +28,12 @@ namespace GPUHunt.Application.Services.CardScraper
         {
             try
             {
+                // dodaj parametr do query określający format 
+                // dodaj słownik przeszkujący w dynamiczny sposób typów z użyciem kontenera DI
+
+
+
+
                 JsonSerializerSettings config = new() { ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore, };
 
                 var gpus = await _graphicCardRepository.GetAll();

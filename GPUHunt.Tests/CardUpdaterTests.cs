@@ -23,10 +23,13 @@ namespace GPUHunt.Tests
             var expectedCard = new Domain.Entities.GraphicCard()
             {
                 Model = "Gigabyte GeForce RTX 3060 Eagle OC 12GB GDDR6",
+                VendorId = 1,
+                MorelePrice = 1599.00M,
+                XKomPrice = null,
                 LowestPrice = 1599.00M,
-                LowestPriceShop = new Domain.Entities.Shop() { Name = "Morele " },
+                LowestPriceStore = "Morele",
                 HighestPrice = null,
-                HighestPriceShop = null,
+                HighestPriceStore = null,
                 IsPriceEqual = false
             };
 
@@ -51,10 +54,13 @@ namespace GPUHunt.Tests
             var expectedCard = new Domain.Entities.GraphicCard()
             {
                 Model = "Gigabyte GeForce RTX 3060 Eagle OC 12GB GDDR6",
+                VendorId = 1,
+                MorelePrice = 1599.00M,
+                XKomPrice = 1799.00M,
                 LowestPrice = 1599.00M,
-                LowestPriceShop = new Domain.Entities.Shop() { Name = "Morele " },
+                LowestPriceStore = "Morele",
                 HighestPrice = 1799.00M,
-                HighestPriceShop = new Domain.Entities.Shop() { Name = "X-Kom " },
+                HighestPriceStore = "X-Kom",
                 IsPriceEqual = false
             };
 
@@ -78,10 +84,13 @@ namespace GPUHunt.Tests
             var expectedCard = new Domain.Entities.GraphicCard()
             {
                 Model = "Gigabyte GeForce RTX 3060 Eagle OC 12GB GDDR6",
+                VendorId = 1,
+                MorelePrice = 1599.00M,
+                XKomPrice = 1599.00M,
                 LowestPrice = 1599.00M,
-                LowestPriceShop = new Domain.Entities.Shop() { Name = "Morele, X-Kom " },
+                LowestPriceStore = "Morele, X-Kom",
                 HighestPrice = null,
-                HighestPriceShop = null,
+                HighestPriceStore = null,
                 IsPriceEqual = true
             };
 
@@ -105,10 +114,13 @@ namespace GPUHunt.Tests
             var expectedCard = new Domain.Entities.GraphicCard()
             {
                 Model = "Gigabyte GeForce RTX 3060 Eagle OC 12GB GDDR6",
+                VendorId = 1,
+                MorelePrice = 1499.00M,
+                XKomPrice = 1899.00M,
                 LowestPrice = 1499.00M,
-                LowestPriceShop = new Domain.Entities.Shop() { Name = "Morele " },
+                LowestPriceStore = "Morele",
                 HighestPrice = 1899.00M,
-                HighestPriceShop = new Domain.Entities.Shop() { Name = "X-Kom " },
+                HighestPriceStore = "X-Kom",
                 IsPriceEqual = false
             };
 
@@ -128,10 +140,13 @@ namespace GPUHunt.Tests
             return new Domain.Entities.GraphicCard
             {
                 Model = "Gigabyte GeForce RTX 3060 Eagle OC 12GB GDDR6",
+                VendorId = 1,
+                MorelePrice = 1699.00M,
+                XKomPrice = null,
                 LowestPrice = 1699.00M,
-                LowestPriceShop = new Domain.Entities.Shop() { Name = "Morele " },
+                LowestPriceStore = "Morele",
                 HighestPrice = null,
-                HighestPriceShop = null,
+                HighestPriceStore= null,
                 IsPriceEqual = false
             };
         }
@@ -141,10 +156,13 @@ namespace GPUHunt.Tests
             return new Domain.Entities.GraphicCard
             {
                 Model = "Gigabyte GeForce RTX 3060 Eagle OC 12GB GDDR6",
+                VendorId = 1,
+                MorelePrice = 1799.00M,
+                XKomPrice = 1699.00M,
                 LowestPrice = 1699.00M,
-                LowestPriceShop = new Domain.Entities.Shop() { Name = "X-Kom " },
+                LowestPriceStore = "X-Kom",
                 HighestPrice = 1799.00M,
-                HighestPriceShop = new Domain.Entities.Shop() { Name = "Morele" },
+                HighestPriceStore = "Morele",
                 IsPriceEqual = false
             };
         }
@@ -154,10 +172,13 @@ namespace GPUHunt.Tests
             return new Domain.Entities.GraphicCard
             {
                 Model = "Gigabyte GeForce RTX 3060 Eagle OC 12GB GDDR6",
+                VendorId = 1,
+                MorelePrice = 1599.00M,
+                XKomPrice = 1799.00M,
                 LowestPrice = 1599.00M,
-                LowestPriceShop = new Domain.Entities.Shop() { Name = "Morele " },
+                LowestPriceStore = "Morele",
                 HighestPrice = 1799.00M,
-                HighestPriceShop = new Domain.Entities.Shop() { Name = "X-Kom " },
+                HighestPriceStore = "X-Kom",
                 IsPriceEqual = false
             };
         }
@@ -167,10 +188,13 @@ namespace GPUHunt.Tests
             return new Domain.Entities.GraphicCard
             {
                 Model = "Gigabyte GeForce RTX 3060 Eagle OC 12GB GDDR6",
+                VendorId = 1,
+                MorelePrice = 1499.00M,
+                XKomPrice = 1899.00M,
                 LowestPrice = 1499.00M,
-                LowestPriceShop = new Domain.Entities.Shop() { Name = "Morele " },
+                LowestPriceStore = "Morele",
                 HighestPrice = 1899.00M,
-                HighestPriceShop = new Domain.Entities.Shop() { Name = "X-Kom " },
+                HighestPriceStore = "X-Kom",
                 IsPriceEqual = false
             };
         }
@@ -180,10 +204,13 @@ namespace GPUHunt.Tests
             return new Domain.Entities.GraphicCard
             {
                 Model = "Gigabyte GeForce RTX 3060 Eagle OC 12GB GDDR6",
+                VendorId = 1,
+                MorelePrice = 1599.00M,
+                XKomPrice = null,
                 LowestPrice = 1599.00M,
-                LowestPriceShop = new Domain.Entities.Shop() { Name = "Morele " },
+                LowestPriceStore = "Morele",
                 HighestPrice = null,
-                HighestPriceShop = null,
+                HighestPriceStore = null,
                 IsPriceEqual = false
             };
         }
@@ -193,10 +220,13 @@ namespace GPUHunt.Tests
             return new Domain.Entities.GraphicCard
             {
                 Model = "Gigabyte GeForce RTX 3060 Eagle OC 12GB GDDR6",
+                VendorId = 1,
+                MorelePrice = 1599.00M,
+                XKomPrice = 1599.00M,
                 LowestPrice = 1599.00M,
-                LowestPriceShop = new Domain.Entities.Shop() { Name = "Morele, X-Kom " },
+                LowestPriceStore= "Morele, X-Kom",
                 HighestPrice = null,
-                HighestPriceShop = null,
+                HighestPriceStore = null,
                 IsPriceEqual = true
             };
         }

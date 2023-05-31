@@ -26,6 +26,7 @@ namespace GPUHunt.Infrastructure.Repositories
         {
             var baseQuery = _dbContext
                                 .GraphicCards
+                                .Include(g => g.Vendor)
                                 .Where(g => query.SearchPhrase == null || g.Model.ToLower().Contains(query.SearchPhrase.ToLower()))
                                 .AsNoTracking()
                                 .AsQueryable();
@@ -75,12 +76,6 @@ namespace GPUHunt.Infrastructure.Repositories
             {
                 return;
             }
-
-            cardFromDatabase.LowestPrice = graphicCard.LowestPrice;
-            cardFromDatabase.LowestPriceShop = graphicCard.LowestPriceShop;
-            cardFromDatabase.HighestPrice = graphicCard.HighestPrice;
-            cardFromDatabase.HighestPriceShop = graphicCard.HighestPriceShop;
-            cardFromDatabase.IsPriceEqual = graphicCard.IsPriceEqual;
 
             await _dbContext.SaveChangesAsync();
         }

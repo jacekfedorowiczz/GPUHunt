@@ -33,7 +33,7 @@ namespace GPUHunt.MVC.Controllers
         {
             var isDatabaseNotEmpty = await _mediator.Send(new IsDatabaseNotEmptyQuery());
 
-            if (isDatabaseNotEmpty is true)
+            if (isDatabaseNotEmpty == true)
             {
                 return RedirectToAction("GetCards");
             }
@@ -74,6 +74,13 @@ namespace GPUHunt.MVC.Controllers
         [HttpGet]
         public async Task<IActionResult> Crawl()
         {
+            var isDatabaseNotEmpty = await _mediator.Send(new IsDatabaseNotEmptyQuery());
+
+            if (isDatabaseNotEmpty == true)
+            {
+                return RedirectToAction("GetCards");
+            }
+
             await _mediator.Send(new CrawlGraphicCardsCommand());
             return RedirectToAction("Index");
         }

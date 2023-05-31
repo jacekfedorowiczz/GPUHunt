@@ -1,5 +1,6 @@
 using GPUHunt.Infrastructure.Extensions;
 using GPUHunt.Application.Extensions;
+using GPUHunt.Infrastructure.Seeders;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,10 @@ builder.Services.AddApplication();
 builder.Services.AddRazorPages().AddNewtonsoftJson();
 
 var app = builder.Build();
+
+var scope = app.Services.CreateScope();
+var seeder = scope.ServiceProvider.GetRequiredService<Seeder>();
+await seeder.SeedDatabase();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

@@ -1,6 +1,7 @@
 ﻿using FluentAssertions;
 using GPUHunt.Application.Interfaces;
 using GPUHunt.Application.Models;
+using GPUHunt.Application.Models.Enums;
 using GPUHunt.Application.Services.CardComparer;
 using GPUHunt.Domain.Entities;
 using Moq;
@@ -66,11 +67,13 @@ namespace GPUHunt.Tests
                 new Domain.Entities.GraphicCard()
                 {
                     Model = "Gigabyte GeForce RTX 3060 Eagle OC 12GB GDDR6",
-                    Vendor = "NVIDIA",
+                    VendorId = 1,
+                    MorelePrice = 1699.00M,
+                    XKomPrice = 1699.00M,
                     LowestPrice = 1699.00M,
-                    LowestPriceShop = new Shop() { Name = "Morele, X-Kom" },
+                    LowestPriceStore = "Morele, X-Kom",
                     HighestPrice = null,
-                    HighestPriceShop = null,
+                    HighestPriceStore = null,
                     IsPriceEqual = true
                 }
             };
@@ -98,17 +101,17 @@ namespace GPUHunt.Tests
                 {
                     FullName = "NVIDIA Gigabyte GeForce RTX 3060 Eagle OC 12GB GDDR6",
                     Model = "Gigabyte GeForce RTX 3060 Eagle OC 12GB GDDR6",
-                    Shop = "Morele",
+                    Store = "Morele",
                     Price = 1699.00M,
-                    Vendor = "NVIDIA"
+                    Vendor = Vendors.NVIDIA
                 },
                 new GPU()
                 {
                     FullName = "NVIDIA Gigabyte GeForce RTX 3060 Eagle OC 12GB GDDR6",
                     Model = "Gigabyte GeForce RTX 3060 Eagle OC 12GB GDDR6",
-                    Shop = "X-Kom",
+                    Store = "X-Kom",
                     Price = 1699.00M,
-                    Vendor = "NVIDIA"
+                    Vendor = Vendors.NVIDIA
                 }
             };
 
@@ -123,25 +126,25 @@ namespace GPUHunt.Tests
                 {
                     FullName = "NVIDIA Gigabyte GeForce RTX 3060 Eagle OC 12GB GDDR6",
                     Model = "Gigabyte GeForce RTX 3060 Eagle OC 12GB GDDR6",
-                    Shop = "Morele",
+                    Store = "Morele",
                     Price = 1699.00M,
-                    Vendor = "NVIDIA"
+                    Vendor = Vendors.NVIDIA
                 }
                 ,new GPU
                 {
                     FullName = "NVIDIA Gigabyte GeForce RTX 3060 Eagle OC 12GB GDDR6",
                     Model = "Gigabyte GeForce RTX 3060 Eagle OC 12GB GDDR6",
-                    Shop = "X-Kom",
+                    Store = "X-Kom",
                     Price = 1899.00M,
-                    Vendor = "NVIDIA"
+                    Vendor = Vendors.NVIDIA
                 }
                 ,new GPU
                 {
                     FullName = "NVIDIA MSI GeForce RTX 3060 Gaming X Trio 12GB GDDR6",
                     Model = "MSI GeForce RTX 3060 Gaming X Trio 12GB GDDR6",
-                    Shop = "Morele",
+                    Store = "Morele",
                     Price = 2000.00M,
-                    Vendor = "NVIDIA"
+                    Vendor = Vendors.NVIDIA
                 }
             };
 
@@ -155,26 +158,31 @@ namespace GPUHunt.Tests
                 new Domain.Entities.GraphicCard()
                 {
                     Model = "Gigabyte GeForce RTX 3060 Eagle OC 12GB GDDR6",
-                    Vendor = "NVIDIA",
+                    VendorId = 1,
+                    MorelePrice = 1699.00M,
+                    XKomPrice = 1899.00M,
                     LowestPrice = 1699.00M,
-                    LowestPriceShop = new Shop { Name = "Morele" },
+                    LowestPriceStore= "Morele",
                     HighestPrice = 1899.00M,
-                    HighestPriceShop = new Shop { Name = "X-Kom" },
+                    HighestPriceStore = "X-Kom",
                     IsPriceEqual = false
                 },
                 new Domain.Entities.GraphicCard()
                 {
                     Model = "MSI GeForce RTX 3060 Gaming X Trio 12GB GDDR6",
-                    Vendor = "NVIDIA",
+                    VendorId = 1,
+                    MorelePrice = 2000.00M,
+                    XKomPrice = null,
                     LowestPrice = 2000.00M,
-                    LowestPriceShop = new Shop { Name = "Morele" },
+                    LowestPriceStore = "Morele",
                     HighestPrice = null,
-                    HighestPriceShop = null,
+                    HighestPriceStore = null,
                     IsPriceEqual = false
                 },
             };
 
             return expectedList;
         }
+
     }
 }

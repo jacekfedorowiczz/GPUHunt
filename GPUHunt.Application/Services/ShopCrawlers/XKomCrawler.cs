@@ -1,5 +1,6 @@
 ﻿using GPUHunt.Application.Interfaces;
 using GPUHunt.Application.Models;
+using GPUHunt.Application.Models.Enums;
 using GPUHunt.Application.Services.ShopCrawlers.Info;
 using HtmlAgilityPack;
 using System;
@@ -94,7 +95,7 @@ namespace GPUHunt.Application.Services.ShopCrawlers
 
             var gpuName = sb.Append(gpuModel).Insert(0, "Karta graficzna ").ToString();
 
-            string gpuVendor = IShopCrawler.SetVendor(gpuName);
+            Vendors gpuVendor = IShopCrawler.SetVendor(gpuName);
 
             var result = new GPU
             {
@@ -102,7 +103,7 @@ namespace GPUHunt.Application.Services.ShopCrawlers
                 Vendor = gpuVendor,
                 Model = gpuModel,
                 Price = gpuPrice,
-                Shop = "X-Kom"
+                Store = "X-Kom"
             };
 
             return result;

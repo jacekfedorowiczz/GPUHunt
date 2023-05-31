@@ -51,22 +51,16 @@ namespace GPUHunt.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "GraphicCards",
+                name: "Vendors",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Vendor = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Model = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    LowestPrice = table.Column<decimal>(type: "decimal(7,2)", precision: 7, scale: 2, nullable: false),
-                    LowestPriceShop_Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    HighestPrice = table.Column<decimal>(type: "decimal(7,2)", precision: 7, scale: 2, nullable: true),
-                    HighestPriceShop_Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    IsPriceEqual = table.Column<bool>(type: "bit", nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_GraphicCards", x => x.Id);
+                    table.PrimaryKey("PK_Vendors", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -175,6 +169,33 @@ namespace GPUHunt.Infrastructure.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "GraphicCards",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Model = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    VendorId = table.Column<int>(type: "int", nullable: false),
+                    MorelePrice = table.Column<decimal>(type: "decimal(7,2)", precision: 7, scale: 2, nullable: true),
+                    XKomPrice = table.Column<decimal>(type: "decimal(7,2)", precision: 7, scale: 2, nullable: true),
+                    IsPriceEqual = table.Column<bool>(type: "bit", nullable: false),
+                    LowestPrice = table.Column<decimal>(type: "decimal(7,2)", precision: 7, scale: 2, nullable: false),
+                    LowestPriceStore = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    HighestPrice = table.Column<decimal>(type: "decimal(7,2)", precision: 7, scale: 2, nullable: true),
+                    HighestPriceStore = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_GraphicCards", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_GraphicCards_Vendors_VendorId",
+                        column: x => x.VendorId,
+                        principalTable: "Vendors",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -213,6 +234,11 @@ namespace GPUHunt.Infrastructure.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_GraphicCards_VendorId",
+                table: "GraphicCards",
+                column: "VendorId");
         }
 
         /// <inheritdoc />
@@ -241,6 +267,9 @@ namespace GPUHunt.Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Vendors");
         }
     }
 }

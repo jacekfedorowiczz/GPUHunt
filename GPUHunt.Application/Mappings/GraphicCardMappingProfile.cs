@@ -15,11 +15,12 @@ namespace GPUHunt.Application.Mappings
         {
             CreateMap<GPU, Domain.Entities.GraphicCard>()
                 .ForMember(gc => gc.LowestPrice, opt => opt.MapFrom(g => g.Price))
-                .ForMember(gc => gc.LowestPriceShop, opt => opt.MapFrom(g => g.Shop));
+                .ForMember(gc => gc.LowestPriceStore, opt => opt.MapFrom(g => g.Store));
 
             CreateMap<Domain.Entities.GraphicCard, GraphicCardDto>()
-                .ForMember(dto => dto.LowestPriceShop, opt => opt.MapFrom(gc => gc.LowestPriceShop.Name))
-                .ForMember(dto => dto.HighestPriceShop, opt => opt.MapFrom(gc => gc.HighestPriceShop.Name));
+                .ForMember(dto => dto.LowestPriceShop, opt => opt.MapFrom(gc => gc.LowestPriceStore))
+                .ForMember(dto => dto.HighestPriceShop, opt => opt.MapFrom(gc => gc.HighestPriceStore))
+                .ForMember(dto => dto.Vendor, opt => opt.MapFrom(gc => gc.Vendor.Name));
         }
     }
 }

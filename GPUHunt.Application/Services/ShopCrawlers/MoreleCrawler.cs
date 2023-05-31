@@ -1,5 +1,6 @@
 ﻿using GPUHunt.Application.Interfaces;
 using GPUHunt.Application.Models;
+using GPUHunt.Application.Models.Enums;
 using GPUHunt.Application.Services.ShopCrawlers.Info;
 using HtmlAgilityPack;
 using System;
@@ -85,9 +86,9 @@ namespace GPUHunt.Application.Services.ShopCrawlers
         {
             StringBuilder sb = new();
 
-            var gpuName = string.Join(' ', gpu.QuerySelector(_gpuNameSelector)
+            var gpuName = gpu.QuerySelector(_gpuNameSelector)
                                     .Attributes["title"]
-                                    .Value);
+                                    .Value;
 
             var gpuPrice = decimal.Parse(gpu.QuerySelector(_gpuPriceSelector)
                                     .InnerText
@@ -104,7 +105,7 @@ namespace GPUHunt.Application.Services.ShopCrawlers
                 gpuName = gpuName.Substring(0, gpuName.IndexOf(_characterToAvoid)).Trim();
             }
 
-            string gpuVendor = IShopCrawler.SetVendor(gpuName);
+            Vendors gpuVendor = IShopCrawler.SetVendor(gpuName);
 
             var gpuModel = sb.Append(gpuName).Remove(start, end + 9).ToString().Trim();
 
@@ -114,7 +115,7 @@ namespace GPUHunt.Application.Services.ShopCrawlers
                 Vendor = gpuVendor,
                 Model = gpuModel,
                 Price = gpuPrice,
-                Shop = "Morele"
+                Store = "Morele"
             };
 
             return result;

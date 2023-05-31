@@ -24,7 +24,7 @@ namespace GPUHunt.Application.Services.CardComparer
             {
                 if (graphicCards.FirstOrDefault(gc => gc.Model.ToLower() == gpu.Model.ToLower()) == null)
                 {
-                    var sameGpu = gpus.FirstOrDefault(sg => sg.Model.ToLower() == gpu.Model.ToLower() && sg.Shop.ToLower() != gpu.Shop.ToLower());
+                    var sameGpu = gpus.FirstOrDefault(sg => sg.Model.ToLower() == gpu.Model.ToLower() && sg.Store.ToLower() != gpu.Store.ToLower());
 
                     if (sameGpu == null)
                     {
@@ -45,32 +45,59 @@ namespace GPUHunt.Application.Services.CardComparer
         private static async Task<Domain.Entities.GraphicCard> CreateGraphicCardAfterCompare(GPU gpu, GPU sameGpu)
         {
             var graphicCard = new Domain.Entities.GraphicCard();
-            StringBuilder sb = new(gpu.Shop);
+            StringBuilder sb = new(gpu.Store);
 
             graphicCard.Model = gpu.Model;
-            graphicCard.Vendor = gpu.Vendor;
-            graphicCard.IsPriceEqual = false;
 
-            if (gpu.Price > sameGpu.Price)
+            switch (gpu.Vendor)
             {
-                graphicCard.LowestPrice = sameGpu.Price;
-                graphicCard.LowestPriceShop = new Shop() { Name = $"{sameGpu.Shop}" };
-                graphicCard.HighestPrice = gpu.Price;
-                graphicCard.HighestPriceShop = new Shop() { Name = $"{gpu.Shop}" };
+                case Models.Enums.Vendors.NVIDIA:
+                    graphicCard.VendorId = 1;
+                    break;
+                case Models.Enums.Vendors.AMD:
+                    graphicCard.VendorId = 2;
+                    break;
+                case Models.Enums.Vendors.Intel:
+                    graphicCard.VendorId = 3;
+                    break;
+                default:
+                    graphicCard.VendorId = 4;
+                    break;
             }
-            else if (gpu.Price < sameGpu.Price)
+
+            if (gpu.Store == "Morele")
             {
-                graphicCard.LowestPrice = gpu.Price;
-                graphicCard.LowestPriceShop = new Shop() { Name = $"{gpu.Shop}" };
-                graphicCard.HighestPrice = sameGpu.Price;
-                graphicCard.HighestPriceShop = new Shop() { Name = $"{sameGpu.Shop}" };
+                graphicCard.MorelePrice = gpu.Price;
+                graphicCard.XKomPrice = sameGpu.Price;
             }
             else
             {
-                graphicCard.LowestPrice = sameGpu.Price;
-                graphicCard.LowestPriceShop = new Shop() { Name = $"{sb.Append($", {sameGpu.Shop}")}" };
-                graphicCard.HighestPrice = null;
-                graphicCard.HighestPriceShop = null;
+                graphicCard.MorelePrice = sameGpu.Price;
+                graphicCard.XKomPrice = gpu.Price;
+            }
+
+            if (gpu.Price != sameGpu.Price)
+            {
+                switch (gpu.Price > sameGpu.Price)
+                {
+                    case true:
+                    graphicCard.LowestPrice = sameGpu.Price;
+                    graphicCard.LowestPriceStore = sameGpu.Store;
+                    graphicCard.HighestPrice = gpu.Price;
+                    graphicCard.HighestPriceStore = gpu.Store;
+                    break;
+                case false:
+                    graphicCard.LowestPrice = gpu.Price;
+                    graphicCard.LowestPriceStore = gpu.Store;
+                    graphicCard.HighestPrice = sameGpu.Price;
+                    graphicCard.HighestPriceStore = sameGpu.Store;
+                    break;
+            }
+            }
+            else
+            {
+                graphicCard.LowestPrice = gpu.Price;
+                graphicCard.LowestPriceStore = sb.Append(", X-Kom").ToString();
                 graphicCard.IsPriceEqual = true;
             }
 
@@ -79,16 +106,42 @@ namespace GPUHunt.Application.Services.CardComparer
 
         private static async Task<Domain.Entities.GraphicCard> CreateGraphicCardWithoutCompare(GPU gpu)
         {
-            return new Domain.Entities.GraphicCard()
+            var graphicCard = new Domain.Entities.GraphicCard()
             {
                 Model = gpu.Model,
-                Vendor = gpu.Vendor,
-                LowestPrice = gpu.Price,
-                LowestPriceShop = new Shop() { Name = gpu.Shop },
-                HighestPrice = null,
-                HighestPriceShop = null,
                 IsPriceEqual = false
             };
+
+            switch (gpu.Vendor)
+            {
+                case Models.Enums.Vendors.NVIDIA:
+                    graphicCard.VendorId = 1;
+                    break;
+                case Models.Enums.Vendors.AMD:
+                    graphicCard.VendorId = 2;
+                    break;
+                case Models.Enums.Vendors.Intel:
+                    graphicCard.VendorId = 3;
+                    break;
+                default:
+                    graphicCard.VendorId = 4;
+                    break;
+            }
+
+            if (gpu.Store == "Morele")
+            {
+                graphicCard.MorelePrice = gpu.Price;
+                graphicCard.LowestPrice = gpu.Price;
+                graphicCard.LowestPriceStore = "Morele";
+            }
+            else
+            {
+                graphicCard.XKomPrice = gpu.Price;
+                graphicCard.LowestPrice = gpu.Price;
+                graphicCard.LowestPriceStore = "X-kom";
+            }
+
+            return graphicCard;
         }
     }
 }

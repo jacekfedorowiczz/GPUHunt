@@ -1,6 +1,7 @@
 ﻿using GPUHunt.Domain.Interfaces;
 using GPUHunt.Infrastructure.Persistence;
 using GPUHunt.Infrastructure.Repositories;
+using GPUHunt.Infrastructure.Seeders;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -27,6 +28,7 @@ namespace GPUHunt.Infrastructure.Extensions
                 .AddEntityFrameworkStores<GPUHuntDbContext>();
 
             services.AddScoped<IGraphicCardRepository, GraphicCardRepository>();
+            services.AddScoped<Seeder>();
         }
     }
 }
