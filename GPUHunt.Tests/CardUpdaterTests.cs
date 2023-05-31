@@ -1,6 +1,7 @@
 ﻿using FluentAssertions;
 using GPUHunt.Application.Interfaces;
 using GPUHunt.Application.Services.CardUpdater;
+using GPUHunt.Domain.Entities;
 using GPUHunt.Domain.Interfaces;
 using Moq;
 using System;
@@ -27,7 +28,7 @@ namespace GPUHunt.Tests
                 MorelePrice = 1599.00M,
                 XKomPrice = null,
                 LowestPrice = 1599.00M,
-                LowestPriceStore = "Morele",
+                LowestPriceStore = new Store { Name = "Morele" },
                 HighestPrice = null,
                 HighestPriceStore = null,
                 IsPriceEqual = false
@@ -58,9 +59,9 @@ namespace GPUHunt.Tests
                 MorelePrice = 1599.00M,
                 XKomPrice = 1799.00M,
                 LowestPrice = 1599.00M,
-                LowestPriceStore = "Morele",
+                LowestPriceStore = new Store { Name = "Morele" },
                 HighestPrice = 1799.00M,
-                HighestPriceStore = "X-Kom",
+                HighestPriceStore = new Store { Name = "X-Kom" },
                 IsPriceEqual = false
             };
 
@@ -88,7 +89,7 @@ namespace GPUHunt.Tests
                 MorelePrice = 1599.00M,
                 XKomPrice = 1599.00M,
                 LowestPrice = 1599.00M,
-                LowestPriceStore = "Morele, X-Kom",
+                LowestPriceStore = new Store { Name = "Morele, X-Kom" },
                 HighestPrice = null,
                 HighestPriceStore = null,
                 IsPriceEqual = true
@@ -118,9 +119,9 @@ namespace GPUHunt.Tests
                 MorelePrice = 1499.00M,
                 XKomPrice = 1899.00M,
                 LowestPrice = 1499.00M,
-                LowestPriceStore = "Morele",
+                LowestPriceStore = new Store { Name = "Morele" },
                 HighestPrice = 1899.00M,
-                HighestPriceStore = "X-Kom",
+                HighestPriceStore = new Store { Name = "X-Kom" },
                 IsPriceEqual = false
             };
 
@@ -144,7 +145,7 @@ namespace GPUHunt.Tests
                 MorelePrice = 1699.00M,
                 XKomPrice = null,
                 LowestPrice = 1699.00M,
-                LowestPriceStore = "Morele",
+                LowestPriceStore = new Store { Name = "Morele" },
                 HighestPrice = null,
                 HighestPriceStore= null,
                 IsPriceEqual = false
@@ -160,9 +161,9 @@ namespace GPUHunt.Tests
                 MorelePrice = 1799.00M,
                 XKomPrice = 1699.00M,
                 LowestPrice = 1699.00M,
-                LowestPriceStore = "X-Kom",
+                LowestPriceStore = new Store { Name = "X-Kom" },
                 HighestPrice = 1799.00M,
-                HighestPriceStore = "Morele",
+                HighestPriceStore = new Store { Name = "Morele" },
                 IsPriceEqual = false
             };
         }
@@ -176,9 +177,9 @@ namespace GPUHunt.Tests
                 MorelePrice = 1599.00M,
                 XKomPrice = 1799.00M,
                 LowestPrice = 1599.00M,
-                LowestPriceStore = "Morele",
+                LowestPriceStore = new Store { Name = "Morele" },
                 HighestPrice = 1799.00M,
-                HighestPriceStore = "X-Kom",
+                HighestPriceStore = new Store { Name = "X-Kom" },
                 IsPriceEqual = false
             };
         }
@@ -192,9 +193,9 @@ namespace GPUHunt.Tests
                 MorelePrice = 1499.00M,
                 XKomPrice = 1899.00M,
                 LowestPrice = 1499.00M,
-                LowestPriceStore = "Morele",
+                LowestPriceStore = new Store { Name = "Morele" },
                 HighestPrice = 1899.00M,
-                HighestPriceStore = "X-Kom",
+                HighestPriceStore = new Store { Name = "X-Kom" },
                 IsPriceEqual = false
             };
         }
@@ -208,7 +209,7 @@ namespace GPUHunt.Tests
                 MorelePrice = 1599.00M,
                 XKomPrice = null,
                 LowestPrice = 1599.00M,
-                LowestPriceStore = "Morele",
+                LowestPriceStore = new Store { Name = "Morele" },
                 HighestPrice = null,
                 HighestPriceStore = null,
                 IsPriceEqual = false
@@ -224,7 +225,7 @@ namespace GPUHunt.Tests
                 MorelePrice = 1599.00M,
                 XKomPrice = 1599.00M,
                 LowestPrice = 1599.00M,
-                LowestPriceStore= "Morele, X-Kom",
+                LowestPriceStore= new Store { Name = "Morele, X-Kom" },
                 HighestPrice = null,
                 HighestPriceStore = null,
                 IsPriceEqual = true

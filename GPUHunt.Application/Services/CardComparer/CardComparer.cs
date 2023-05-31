@@ -82,22 +82,22 @@ namespace GPUHunt.Application.Services.CardComparer
                 {
                     case true:
                     graphicCard.LowestPrice = sameGpu.Price;
-                    graphicCard.LowestPriceStore = sameGpu.Store;
+                    graphicCard.LowestPriceStore = new Store { Name = sameGpu.Store };
                     graphicCard.HighestPrice = gpu.Price;
-                    graphicCard.HighestPriceStore = gpu.Store;
-                    break;
+                    graphicCard.HighestPriceStore = new Store { Name = gpu.Store };
+                        break;
                 case false:
                     graphicCard.LowestPrice = gpu.Price;
-                    graphicCard.LowestPriceStore = gpu.Store;
+                    graphicCard.LowestPriceStore = new Store { Name = gpu.Store };
                     graphicCard.HighestPrice = sameGpu.Price;
-                    graphicCard.HighestPriceStore = sameGpu.Store;
+                    graphicCard.HighestPriceStore = new Store { Name = sameGpu.Store };
                     break;
             }
             }
             else
             {
                 graphicCard.LowestPrice = gpu.Price;
-                graphicCard.LowestPriceStore = sb.Append(", X-Kom").ToString();
+                graphicCard.LowestPriceStore = new Store { Name = sb.Append(", X-Kom").ToString() };
                 graphicCard.IsPriceEqual = true;
             }
 
@@ -132,13 +132,13 @@ namespace GPUHunt.Application.Services.CardComparer
             {
                 graphicCard.MorelePrice = gpu.Price;
                 graphicCard.LowestPrice = gpu.Price;
-                graphicCard.LowestPriceStore = "Morele";
+                graphicCard.LowestPriceStore = new Store { Name = "Morele" };
             }
             else
             {
                 graphicCard.XKomPrice = gpu.Price;
                 graphicCard.LowestPrice = gpu.Price;
-                graphicCard.LowestPriceStore = "X-kom";
+                graphicCard.LowestPriceStore = new Store { Name = "X-Kom" };
             }
 
             return graphicCard;

@@ -58,21 +58,20 @@ namespace GPUHunt.Application.Services.CardUpdater
         {
             try
             {
-
                 cardFromDatabase.MorelePrice = crawledGraphicCard.MorelePrice;
                 cardFromDatabase.XKomPrice = crawledGraphicCard.XKomPrice;
                 cardFromDatabase.LowestPrice = crawledGraphicCard.LowestPrice;
                 cardFromDatabase.LowestPriceStore = crawledGraphicCard.LowestPriceStore;
                 cardFromDatabase.IsPriceEqual = false;
 
-                if (crawledGraphicCard.LowestPriceStore.Contains(','))
+                if (crawledGraphicCard.LowestPriceStore.Name.Contains(','))
                 {
                     cardFromDatabase.IsPriceEqual = true;
                     cardFromDatabase.HighestPrice = null;
                     cardFromDatabase.HighestPriceStore = null;
                 }
 
-                if (!string.IsNullOrEmpty(crawledGraphicCard.HighestPriceStore))
+                if (crawledGraphicCard.HighestPriceStore != null)
                 {
                     cardFromDatabase.HighestPrice = crawledGraphicCard.HighestPrice;
                     cardFromDatabase.HighestPriceStore = crawledGraphicCard.HighestPriceStore;

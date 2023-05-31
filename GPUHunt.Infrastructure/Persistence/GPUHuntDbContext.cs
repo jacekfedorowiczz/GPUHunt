@@ -17,7 +17,8 @@ namespace GPUHunt.Infrastructure.Persistence
         }
 
         public DbSet<Domain.Entities.GraphicCard> GraphicCards { get; set; }
-        public DbSet <Domain.Entities.Vendor> Vendors { get; set; }
+        public DbSet<Domain.Entities.Vendor> Vendors { get; set; }
+        public DbSet<Domain.Entities.Store> Stores { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -25,6 +26,12 @@ namespace GPUHunt.Infrastructure.Persistence
                 .HasOne(g => g.Vendor)
                 .WithMany(v => v.GraphicCards)
                 .HasForeignKey(g => g.VendorId);
+
+            modelBuilder.Entity<Domain.Entities.GraphicCard>()
+                .OwnsOne(g => g.LowestPriceStore);
+
+            modelBuilder.Entity<Domain.Entities.GraphicCard>()
+                .OwnsOne(g => g.HighestPriceStore);
 
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(GraphicCardConfiguration).Assembly);
 

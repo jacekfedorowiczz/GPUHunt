@@ -11,8 +11,8 @@
         public bool IsPriceEqual { get; set; }
 
         public decimal LowestPrice { get; set; }
-        public string LowestPriceStore { get; set; }
+        public Store LowestPriceStore { get; set; }
         public decimal? HighestPrice { get; set; }
-        public string? HighestPriceStore { get; set; }
+        public Store? HighestPriceStore { get; set; }
     }
 }

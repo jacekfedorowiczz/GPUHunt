@@ -13,7 +13,8 @@ namespace GPUHunt.Infrastructure.Seeders
 
         public Seeder(GPUHuntDbContext dbContext)
         {
-            _dbContext = dbContext;
+            _dbContext = dbContext ??
+                throw new ArgumentNullException(nameof(dbContext));
         }
 
         public async Task SeedDatabase()
@@ -30,7 +31,7 @@ namespace GPUHunt.Infrastructure.Seeders
                     }
                 }
             }
-            catch (Exception)
+            catch (ArgumentNullException)
             {
 
                 throw;
