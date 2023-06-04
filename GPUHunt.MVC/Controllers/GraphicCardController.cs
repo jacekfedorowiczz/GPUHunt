@@ -39,6 +39,7 @@ namespace GPUHunt.MVC.Controllers
                 return RedirectToAction("GetCards");
             }
 
+            this.SetNotification("error", "Brak kart graficznych w bazie danych!");
             return View();
         }
 

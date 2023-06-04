@@ -6,5 +6,6 @@ namespace GPUHunt.Application.Interfaces
     public interface ICardCrawler
     {
         Task<IEnumerable<Domain.Entities.GraphicCard>> Crawl();
+        Task<ValidationGraphicCardsModel> CrawlToModel();
     }
 }
