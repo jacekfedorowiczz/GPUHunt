@@ -5,6 +5,7 @@ using GPUHunt.Application.GraphicCard.Queries.GetPaginatedGraphicCards;
 using GPUHunt.Application.GraphicCard.Queries.IsDatabaseNotEmpty;
 using GPUHunt.Application.GraphicCard.Queries.ScrapGraphicCards;
 using GPUHunt.Application.Models.DTOs;
+using GPUHunt.Domain.Interfaces;
 using GPUHunt.Domain.Models;
 using GPUHunt.MVC.Extensions;
 using GPUHunt.MVC.Models;

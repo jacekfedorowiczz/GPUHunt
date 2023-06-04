@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GPUHunt.Infrastructure.Migrations
 {
     [DbContext(typeof(GPUHuntDbContext))]
-    [Migration("20230531194800_RefactorGraphicCardsTable")]
-    partial class RefactorGraphicCardsTable
+    [Migration("20230602122009_Init")]
+    partial class Init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

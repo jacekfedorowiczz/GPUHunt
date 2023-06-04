@@ -181,9 +181,11 @@ namespace GPUHunt.Infrastructure.Migrations
                     XKomPrice = table.Column<decimal>(type: "decimal(7,2)", precision: 7, scale: 2, nullable: true),
                     IsPriceEqual = table.Column<bool>(type: "bit", nullable: false),
                     LowestPrice = table.Column<decimal>(type: "decimal(7,2)", precision: 7, scale: 2, nullable: false),
-                    LowestPriceStore = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    LowestPriceStore_Id = table.Column<int>(type: "int", nullable: false),
+                    LowestPriceStore_Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     HighestPrice = table.Column<decimal>(type: "decimal(7,2)", precision: 7, scale: 2, nullable: true),
-                    HighestPriceStore = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    HighestPriceStore_Id = table.Column<int>(type: "int", nullable: true),
+                    HighestPriceStore_Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {

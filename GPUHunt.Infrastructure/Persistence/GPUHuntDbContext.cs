@@ -18,7 +18,6 @@ namespace GPUHunt.Infrastructure.Persistence
 
         public DbSet<Domain.Entities.GraphicCard> GraphicCards { get; set; }
         public DbSet<Domain.Entities.Vendor> Vendors { get; set; }
-        public DbSet<Domain.Entities.Store> Stores { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

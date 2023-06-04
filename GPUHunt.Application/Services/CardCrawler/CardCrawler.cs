@@ -46,7 +46,7 @@ namespace GPUHunt.Application.Services.CardCrawler
             }
         }
 
-        public async Task<ValidationGraphicCardsModel> CrawlToModel()
+        private async Task<ValidationGraphicCardsModel> CrawlToModel()
         {
             List<GPU> gpus = new();
 
