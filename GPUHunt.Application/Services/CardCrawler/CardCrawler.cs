@@ -30,21 +30,21 @@ namespace GPUHunt.Application.Services.CardCrawler
                 throw new ArgumentNullException(nameof(updater));
         }
 
-        public async Task<IEnumerable<Domain.Entities.GraphicCard>> Crawl()
-        {
-            try
-            {
-                var model = await CrawlToModel();
-                await _updater.UpdateGPUPrices(model);
+        //public async Task<IEnumerable<Domain.Entities.GraphicCard>> Crawl()
+        //{
+        //    try
+        //    {
+        //        var model = await CrawlToModel();
+        //        await _updater.UpdateGPUPrices(model);
 
-                return model.NewCards;
-            }
-            catch (Exception)
-            {
+        //        return model.NewCards;
+        //    }
+        //    catch (Exception)
+        //    {
 
-                throw;
-            }
-        }
+        //        throw;
+        //    }
+        //}
 
         public async Task<ValidationGraphicCardsModel> CrawlToModel()
         {

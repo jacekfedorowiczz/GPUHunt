@@ -1,9 +1,9 @@
 ﻿using FluentAssertions;
 using GPUHunt.Application.Interfaces;
 using GPUHunt.Application.Models;
-using GPUHunt.Application.Models.Enums;
 using GPUHunt.Application.Services.CardComparer;
 using GPUHunt.Domain.Entities;
+using GPUHunt.Domain.Enums;
 using Moq;
 using System;
 using System.Collections.Generic;

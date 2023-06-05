@@ -1,6 +1,7 @@
 ﻿using GPUHunt.Application.Interfaces;
 using GPUHunt.Application.Models;
 using GPUHunt.Domain.Entities;
+using GPUHunt.Domain.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -51,13 +52,13 @@ namespace GPUHunt.Application.Services.CardComparer
 
             switch (gpu.Vendor)
             {
-                case Models.Enums.Vendors.NVIDIA:
+                case Vendors.NVIDIA:
                     graphicCard.VendorId = 1;
                     break;
-                case Models.Enums.Vendors.AMD:
+                case Vendors.AMD:
                     graphicCard.VendorId = 2;
                     break;
-                case Models.Enums.Vendors.Intel:
+                case Vendors.Intel:
                     graphicCard.VendorId = 3;
                     break;
                 default:
@@ -114,13 +115,13 @@ namespace GPUHunt.Application.Services.CardComparer
 
             switch (gpu.Vendor)
             {
-                case Models.Enums.Vendors.NVIDIA:
+                case Vendors.NVIDIA:
                     graphicCard.VendorId = 1;
                     break;
-                case Models.Enums.Vendors.AMD:
+                case Vendors.AMD:
                     graphicCard.VendorId = 2;
                     break;
-                case Models.Enums.Vendors.Intel:
+                case Vendors.Intel:
                     graphicCard.VendorId = 3;
                     break;
                 default:

@@ -1,5 +1,5 @@
 ﻿using GPUHunt.Application.Models;
-using GPUHunt.Application.Models.Enums;
+using GPUHunt.Domain.Enums;
 using System.Globalization;
 
 namespace GPUHunt.Application.Interfaces

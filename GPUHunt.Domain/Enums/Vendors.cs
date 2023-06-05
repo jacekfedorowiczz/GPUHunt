@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GPUHunt.Application.Models.Enums
+namespace GPUHunt.Domain.Enums
 {
     public enum Vendors
     {

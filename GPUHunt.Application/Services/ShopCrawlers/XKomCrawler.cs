@@ -1,7 +1,7 @@
 ﻿using GPUHunt.Application.Interfaces;
 using GPUHunt.Application.Models;
-using GPUHunt.Application.Models.Enums;
 using GPUHunt.Application.Services.ShopCrawlers.Info;
+using GPUHunt.Domain.Enums;
 using HtmlAgilityPack;
 using System;
 using System.Collections.Generic;
@@ -32,7 +32,7 @@ namespace GPUHunt.Application.Services.ShopCrawlers
             }
             catch (ArgumentNullException)
             {
-                throw new Exception("Błąd crawlera xkom.");
+                throw new Exception("Something went wrong.");
             }
         }
 

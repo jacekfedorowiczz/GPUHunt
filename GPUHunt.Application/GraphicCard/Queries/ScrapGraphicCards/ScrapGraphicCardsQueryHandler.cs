@@ -29,7 +29,7 @@ namespace GPUHunt.Application.GraphicCard.Queries.ScrapGraphicCards
                 var currentUser = _userContext.GetCurrentUser();
                 if (currentUser == null)
                 {
-                    return null;
+                    return string.Empty;
                 }
                 var serializedGraphicCards = await _scraper.Scrap();
                 return serializedGraphicCards;

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GPUHunt.Infrastructure.Migrations
 {
     [DbContext(typeof(GPUHuntDbContext))]
-    [Migration("20230602122009_Init")]
+    [Migration("20230605210238_Init")]
     partial class Init
     {
         /// <inheritdoc />

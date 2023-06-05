@@ -1,4 +1,4 @@
-﻿using GPUHunt.Application.Models.Enums;
+﻿using GPUHunt.Domain.Enums;
 
 namespace GPUHunt.Application.Models
 {

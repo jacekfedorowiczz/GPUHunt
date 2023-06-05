@@ -24,8 +24,8 @@ namespace GPUHunt.Application.GraphicCard.Commands.CrawlGraphicCards
 
         public async Task Handle(CrawlGraphicCardsCommand request, CancellationToken cancellationToken)
         {
-            var gpus = await _crawler.Crawl();
-            await _graphicCardRepository.Crawl(gpus);
+            var gpus = await _crawler.CrawlToModel();
+            await _graphicCardRepository.Crawl(gpus.NewCards);
         }
     }
 }
