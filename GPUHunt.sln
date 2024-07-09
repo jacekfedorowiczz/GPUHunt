@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GPUHunt.Infrastructure", "G
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GPUHunt.Tests", "GPUHunt.Tests\GPUHunt.Tests.csproj", "{8541F05F-2E64-4374-B939-3BE1BC64B2C6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GPUHunt.IntegrationTests", "GPUHunt.IntegrationTests\GPUHunt.IntegrationTests.csproj", "{765A6D9C-8357-4F19-939C-A89E1CDEFB38}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GPUHunt.Domain", "GPUHunt.Domain\GPUHunt.Domain.csproj", "{F3ED5E38-31E2-4A2E-80DD-2A6FEEBC65D8}"
 EndProject
 Global
@@ -37,10 +35,6 @@ Global
 		{8541F05F-2E64-4374-B939-3BE1BC64B2C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8541F05F-2E64-4374-B939-3BE1BC64B2C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8541F05F-2E64-4374-B939-3BE1BC64B2C6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{765A6D9C-8357-4F19-939C-A89E1CDEFB38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{765A6D9C-8357-4F19-939C-A89E1CDEFB38}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{765A6D9C-8357-4F19-939C-A89E1CDEFB38}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{765A6D9C-8357-4F19-939C-A89E1CDEFB38}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F3ED5E38-31E2-4A2E-80DD-2A6FEEBC65D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F3ED5E38-31E2-4A2E-80DD-2A6FEEBC65D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3ED5E38-31E2-4A2E-80DD-2A6FEEBC65D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
